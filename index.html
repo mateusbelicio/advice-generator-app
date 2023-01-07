@@ -1,28 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Challenge by Frontend Mentor. Coded by Mateus Belício" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Advice generator app</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Frontend Mentor | Advice generator app</title>
 
-  Advice #<!-- Advice ID goes here -->
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="js/controller.js"></script>
+  </head>
+  <body>
+    <main>
+      <h1 class="u-sr-only">Advice generator app</h1>
 
-  "<!-- Advice text goes here -->"
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+      <article class="c-advice bg-neutral-400 u-grid u-container" data-error="false">
+        <h2 class="c-advice__title fs-200 text-accent-400 u-uppercase u-letter-spacing">
+          Advice #<span class="c-advice__id"></span>
+        </h2>
+        <blockquote class="c-advice__quote fs-500">
+          <span>&OpenCurlyDoubleQuote;</span>
+          <span class="c-advice__text">&hellip;</span>
+          <span>&CloseCurlyDoubleQuote;</span>
+        </blockquote>
+
+        <picture class="c-advice__divider">
+          <source media="(min-width: 30em)" srcset="./images/pattern-divider-desktop.svg" />
+          <img src="./images/pattern-divider-mobile.svg" alt="" aria-hidden="true" />
+        </picture>
+
+        <button class="c-advice__button c-button">
+          <span class="u-sr-only">Generate new advice</span>
+          <img src="./images/icon-dice.svg" alt="" aria-hidden="true" />
+        </button>
+      </article>
+
+      <!-- <div class="c-spinner">
+        <span class="c-spinner__dot" style="--i: 0"></span>
+        <span class="c-spinner__dot" style="--i: 1"></span>
+        <span class="c-spinner__dot" style="--i: 2"></span>
+      </div> -->
+    </main>
+  </body>
 </html>
