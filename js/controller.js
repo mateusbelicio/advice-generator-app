@@ -4,11 +4,12 @@ import { adviceView } from './view.js';
 const controlAdvice = async function () {
   try {
     adviceView.renderSpinner();
-
     await model.getNewAdvice();
-    if (!model.state) return;
 
-    adviceView.renderNewAdvice(model.state);
+    setTimeout(() => {
+      if (!model.state) return;
+      adviceView.renderNewAdvice(model.state);
+    }, 1000);
   } catch (error) {
     adviceView.renderError();
     console.error(error);

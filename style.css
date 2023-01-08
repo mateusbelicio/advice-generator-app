@@ -274,9 +274,8 @@ main {
   border-radius: 50%;
 }
 
-.c-button:active img {
+.c-button[data-loading=true] img {
   animation: sorting-dice 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 1;
-  animation-play-state: running;
 }
 
 .c-button:hover {

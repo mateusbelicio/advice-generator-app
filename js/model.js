@@ -4,7 +4,7 @@ export const state = {};
 
 export const getNewAdvice = async function () {
   try {
-    const newId = Math.ceil(Math.random() * 224);
+    const newId = Math.floor(Math.random() * 224 + 1);
 
     const res = await fetch(`${API_URL}${newId}`);
     const data = await res.json();

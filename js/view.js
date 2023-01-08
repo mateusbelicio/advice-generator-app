@@ -2,10 +2,11 @@ class Advice {
   _parentElement = document.querySelector('.c-advice');
   _id = document.querySelector('.c-advice__id');
   _advice = document.querySelector('.c-advice__text');
+  _btn = document.querySelector('.c-advice__button');
 
   addHandlerGenerateAdvice(handler) {
-    const btn = document.querySelector('.c-advice__button');
-    btn.addEventListener('click', function () {
+    this._btn.addEventListener('click', function () {
+      this.dataset.loading = true;
       handler();
     });
   }
@@ -31,12 +32,14 @@ class Advice {
     this._clear();
     this._id.textContent = data.id;
     this._advice.textContent = data.advice;
+    this._btn.dataset.loading = false;
   }
 
   renderError() {
     this._clear();
     this._advice.textContent = 'Failed to load advice. Try again later...';
     this._parentElement.dataset.error = true;
+    this._btn.dataset.loading = false;
     this._id.textContent = 'Error';
   }
 }
